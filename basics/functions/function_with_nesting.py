@@ -1,6 +1,6 @@
 # Creating a program with simple functions and nesting
-parameter = 0
-def identify(parameter):
+
+def identify():
   sight = str(input("Tell us what do you see: "))
   print(sight)
 
@@ -10,4 +10,4 @@ def identify(parameter):
   else:
     print("We will be fine.")
 
-identify(parameter)
+identify()
