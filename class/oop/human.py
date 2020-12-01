@@ -17,11 +17,15 @@ class Robot:
   # An instance method
   def display(self):
     print(f"I am {self.name}")
+  def __repr__(self):
+
+    return f'robot(name={self.name}, age = {self.age})'
+  
 
 if (__name__ == "__main__"):
   robot = Robot()
   robot.display()
-
+  
 class Human:
   MAX_ENERGY = 100
   
@@ -31,6 +35,8 @@ class Human:
     self.energy= Human.MAX_ENERGY
   def display(self):
     print(f"I am {self.name}")
+  def __str__(self):
+    return f'My name is {self.__name} and I am {self.age} years old.'
   
 
 if(__name__=="__main__"):
