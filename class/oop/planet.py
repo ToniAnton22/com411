@@ -3,45 +3,40 @@ from human import Robot
 
 class Planet:
   def __init__(self):
-    self.humans = []
-    self.robots = []
-    self.hr = []
+    self.inhabitants= {'humans':[],'robots':[]}
+    
   
   def add_human(self,human):
-    self.humans.append(human)
+     self.inhabitants['humans'].append(human)
+    
     
     
 
   def remove_human(self,human):
-    self.humans.remove(human)
+    self.inhabitants['humans'].remove(human)
     
 
   def add_robot(self,robot):
-    self.robots.append(robot)
+    self.inhabitants['robots'].append(robot)
   
 
   def remove_robot(self,robot):
-    self.robots.remove(robot)
+    self.inhabitants['robots'].remove(robot)
      
-
   def __repr__(self):
-    return f"The list of humans is: {self.humans}\n,and the list of robots is {self.robots}" 
+    return f"The list is {self.inhabitants['humans']} and {self.inhabitants['robots']}"
 
   def __str__(self):
-    return f"The list of humans is: {self.humans}\n,and the list of robots is {self.robots}" 
+    return f"There are {len(self.inhabitants['humans'])} humans, and {len(self.inhabitants['robots'])} robots"
   
 if(__name__ == "__main__"):
   planet = Planet()
-  person1 = Human()
-  person2 = Human()
-  person1 = "Darlin"
-  person2 = "George"
+  person1 = Human("Darlin")
+  person2 = Human("George")
   planet.add_human(person1)
   planet.add_human(person2)
-  robot1 = Robot()
-  robot2 = Robot()
-  robot1 = "B20"
-  robot2 = "B12"
+  robot1 = Robot("B12")
+  robot2 = Robot("B20")
   planet.add_robot(robot1)
   planet.add_robot(robot2)
   print(planet.__repr__())
