@@ -23,10 +23,10 @@ class Planet:
   def remove_robot(self,robot):
     self.inhabitants['robots'].remove(robot)
      
-  def __repr__(self):
-    return f"The list is {self.inhabitants['humans']} and {self.inhabitants['robots']}"
-
   def __str__(self):
+    return (f"The list is {self.inhabitants['humans']} and {self.inhabitants['robots']}")
+
+  def __repr__(self):
     return f"There are {len(self.inhabitants['humans'])} humans, and {len(self.inhabitants['robots'])} robots"
   
 if(__name__ == "__main__"):
@@ -39,7 +39,7 @@ if(__name__ == "__main__"):
   robot2 = Robot("B20")
   planet.add_robot(robot1)
   planet.add_robot(robot2)
-  print(planet.__repr__())
   planet.remove_robot(robot1)
   planet.remove_human(person2)
+  print(planet.__repr__())
   print(planet.__str__())

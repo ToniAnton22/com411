@@ -1,10 +1,12 @@
+
+
 class Robot:
 
   # A class attribute
   laws = "Protect, Obey and Survive"
 
   # A class method
-  def the_laws():
+  def the_laws(self):
     print(Robot.laws)
 
   # An initialiser (special instance method)
@@ -22,9 +24,12 @@ class Robot:
 
     return f'robot(name={self.name}, age = {self.age})'
   
+  def __str__(self):
+    return f'My name is {self.name} and I am {self.age} years old.'
+  
 
 if (__name__ == "__main__"):
-  robot = Robot()
+  robot = Robot("groot")
   robot.display()
   robot.grow()
   robot.grow()
@@ -60,13 +65,17 @@ class Human:
 
   def display(self):
     print(f"I am {self.name}")
+    
+  def __repr__(self):
+
+    return f'human(name={self.name}, age = {self.age})'
 
   def __str__(self):
     return f'My name is {self.name} and I am {self.age} years old, and my energy is {self.energy}'
   
 
 if(__name__=="__main__"):
-  human = Human()
+  human = Human("Greg")
   human.display()
   human.eat()
   human.grow()
